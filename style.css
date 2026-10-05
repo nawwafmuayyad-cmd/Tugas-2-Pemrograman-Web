@@ -1,0 +1,177 @@
+/* ===================================================
+   1. RESET & VARIABLE CSS
+   =================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #4f46e5;      /* Indigo */
+    --primary-hover: #4338ca;
+    --text-main: #1f2937;          /* Dark Gray */
+    --text-muted: #6b7280;         /* Muted Gray */
+    --bg-body: #f3f4f6;            /* Light Gray */
+    --bg-card: #ffffff;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --border-radius: 16px;
+}
+
+/* ===================================================
+   2. BODY & LAYOUT UTAMA (Flexbox Centering)
+   =================================================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===================================================
+   3. KARTU PROFIL (Box Model & Elevation)
+   =================================================== */
+.profile-card {
+    background-color: var(--bg-card);
+    width: 100%;
+    max-width: 380px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek Hover pada Kartu Utama */
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================================
+   4. HEADER & AVATAR
+   =================================================== */
+.card-header {
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    height: 120px;
+    position: relative;
+    margin-bottom: 60px; /* Ruang untuk setengah foto yang menimpa */
+}
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-card);
+    position: absolute;
+    bottom: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* ===================================================
+   5. BONTANG / ISI KARTU & TIPOGRAFI
+   =================================================== */
+.card-body {
+    padding: 0 24px 32px 24px;
+}
+
+.name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+
+/* ===================================================
+   6. STATISTIK (Flexbox Distribution)
+   =================================================== */
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px 0;
+    margin-bottom: 24px;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ===================================================
+   7. TOMBOL & INTERAKSI (HOVER)
+   =================================================== */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-main);
+    border: 1.5px solid #d1d5db;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: #f5f3ff;
+    transform: translateY(-2px);
+}
